@@ -17,13 +17,13 @@
 		9290295429A3C4FC00A7C1E3 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9290295329A3C4FC00A7C1E3 /* APIManager.swift */; };
 		9290295729A3C59F00A7C1E3 /* DataMarshaler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9290295629A3C59F00A7C1E3 /* DataMarshaler.swift */; };
 		9290295929A3C5CD00A7C1E3 /* CodingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9290295829A3C5CD00A7C1E3 /* CodingError.swift */; };
-		9290295C29A3C60E00A7C1E3 /* StandardResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9290295B29A3C60E00A7C1E3 /* StandardResponse.swift */; };
 		9290295E29A3C62400A7C1E3 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9290295D29A3C62400A7C1E3 /* HTTPMethod.swift */; };
 		9290296029A3C64E00A7C1E3 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9290295F29A3C64E00A7C1E3 /* NetworkError.swift */; };
 		9290296329A3C90700A7C1E3 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9290296229A3C90700A7C1E3 /* Question.swift */; };
 		9290296B29A3C98900A7C1E3 /* QuestionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9290296A29A3C98900A7C1E3 /* QuestionsTests.swift */; };
 		9290297229A3C9E700A7C1E3 /* FetchQuestionsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9290297129A3C9E700A7C1E3 /* FetchQuestionsRequest.swift */; };
 		9290297429A3CAC900A7C1E3 /* QuestionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9290297329A3CAC900A7C1E3 /* QuestionsService.swift */; };
+		92BE0F7B29A4853900F618BB /* APIManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BE0F7A29A4853900F618BB /* APIManagerMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +48,6 @@
 		9290295329A3C4FC00A7C1E3 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		9290295629A3C59F00A7C1E3 /* DataMarshaler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMarshaler.swift; sourceTree = "<group>"; };
 		9290295829A3C5CD00A7C1E3 /* CodingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingError.swift; sourceTree = "<group>"; };
-		9290295B29A3C60E00A7C1E3 /* StandardResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardResponse.swift; sourceTree = "<group>"; };
 		9290295D29A3C62400A7C1E3 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		9290295F29A3C64E00A7C1E3 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		9290296229A3C90700A7C1E3 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
@@ -56,6 +55,7 @@
 		9290296A29A3C98900A7C1E3 /* QuestionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsTests.swift; sourceTree = "<group>"; };
 		9290297129A3C9E700A7C1E3 /* FetchQuestionsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchQuestionsRequest.swift; sourceTree = "<group>"; };
 		9290297329A3CAC900A7C1E3 /* QuestionsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsService.swift; sourceTree = "<group>"; };
+		92BE0F7A29A4853900F618BB /* APIManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				9290295329A3C4FC00A7C1E3 /* APIManager.swift */,
+				92BE0F7A29A4853900F618BB /* APIManagerMock.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -198,7 +199,6 @@
 		9290295A29A3C60000A7C1E3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9290295B29A3C60E00A7C1E3 /* StandardResponse.swift */,
 				9290295D29A3C62400A7C1E3 /* HTTPMethod.swift */,
 				9290295F29A3C64E00A7C1E3 /* NetworkError.swift */,
 			);
@@ -325,11 +325,11 @@
 				9290297429A3CAC900A7C1E3 /* QuestionsService.swift in Sources */,
 				9290295429A3C4FC00A7C1E3 /* APIManager.swift in Sources */,
 				9290296329A3C90700A7C1E3 /* Question.swift in Sources */,
-				9290295C29A3C60E00A7C1E3 /* StandardResponse.swift in Sources */,
 				9290295029A3C47600A7C1E3 /* RequestManager.swift in Sources */,
 				9290295929A3C5CD00A7C1E3 /* CodingError.swift in Sources */,
 				9290293729A3BBC300A7C1E3 /* ContentView.swift in Sources */,
 				9290293529A3BBC300A7C1E3 /* QuestionsApp.swift in Sources */,
+				92BE0F7B29A4853900F618BB /* APIManagerMock.swift in Sources */,
 				9290295729A3C59F00A7C1E3 /* DataMarshaler.swift in Sources */,
 				9290294B29A3C3C200A7C1E3 /* APIConstants.swift in Sources */,
 				9290295E29A3C62400A7C1E3 /* HTTPMethod.swift in Sources */,

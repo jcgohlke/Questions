@@ -10,15 +10,6 @@ import XCTest
 
 final class QuestionsTests: XCTestCase {
   let urlSession = URLSession.shared
-  let marshaler = DataMarshaler()
-  
-  override func setUpWithError() throws {
-    // Put setup code here. This method is called before the invocation of each test method in the class.
-  }
-  
-  override func tearDownWithError() throws {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-  }
   
   func testQuestionRequest() async throws {
     let fetchQuestionsRequest = FetchQuestionsRequest.fetchQuestions
@@ -35,7 +26,36 @@ final class QuestionsTests: XCTestCase {
 
     XCTAssertTrue(httpResponse.statusCode == 200, "Reponse did not return 200: code=\(httpResponse.statusCode)")
     
-    let questions: [Question] = try marshaler.marshal(data: data)
+    let questions: [Question] = try JSONDecoder().decode([Question].self, from: data)
+    XCTAssertTrue(questions.count == 3, "API should return 3 questions")
+  }
+  
+  func testAPIManagerMocked() async throws {
+    let fetchQuestionsRequest = FetchQuestionsRequest.fetchQuestions
+    
+    let apiManager = APIManagerMock()
+    let data = try await apiManager.perform(fetchQuestionsRequest)
+    
+    let questions: [Question] = try DataMarshaler().marshal(data: data)
+    XCTAssertTrue(questions.count == 3, "API should return 3 questions")
+  }
+  
+  func testAPIManager() async throws {
+    let fetchQuestionsRequest = FetchQuestionsRequest.fetchQuestions
+    
+    let apiManager = APIManager(urlSession: urlSession)
+    let data = try await apiManager.perform(fetchQuestionsRequest)
+    
+    let questions: [Question] = try DataMarshaler().marshal(data: data)
+    XCTAssertTrue(questions.count == 3, "API should return 3 questions")
+  }
+  
+  func testRequestManager() async throws {
+    let fetchQuestionsRequest = FetchQuestionsRequest.fetchQuestions
+    
+    let requestManager = RequestManager()
+    let questions: [Question] = try await requestManager.perform(fetchQuestionsRequest)
+    
     XCTAssertTrue(questions.count == 3, "API should return 3 questions")
   }
   

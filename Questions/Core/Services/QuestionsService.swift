@@ -26,7 +26,6 @@ extension QuestionsService: QuestionsFetcher {
     let fetchQuestionsRequest: FetchQuestionsRequest = .fetchQuestions
     
     let questions: [Question] = try await requestManager.perform(fetchQuestionsRequest)
-    
     logger.debug("\(questions.count) questions received.")
     return questions
   }

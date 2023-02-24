@@ -15,7 +15,6 @@ class DataMarshaler: DataMarshalerProtocol {
   private var jsonDecoder: JSONDecoder
 
   init(jsonDecoder: JSONDecoder = JSONDecoder()) {
-    jsonDecoder.dateDecodingStrategy = .iso8601
     self.jsonDecoder = jsonDecoder
   }
 
